@@ -22,8 +22,18 @@ app.get('/secret', (req, res) => {
             const db = client.db(DB_NAME);
             const collection = db.collection('names');
             const entry = {
-                name : req.body.name.toLowerCase();
-            }
+                name : req.body.name.toLowerCase(),
+                card : req.body.number + '_of_' + req.body.suit
+            };
+            collection.insertOne(entry, (err, result) => {
+                if(err) {
+                    console.log(err);
+                }
+                else if {
+                    res.send('Inserted into database');
+                }
+            })
+            db.close();
         }
     })
 })
