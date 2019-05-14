@@ -10,3 +10,20 @@ const DB_NAME = process.env.DB_NAME;
 
 app.use(bodyParser.urlencoded({ extended : false }));
 app.use(bodyParser.json());
+
+app.get('/secret', (req, res) => res.sendFile(path.join(__dirname, 'secret.html')));
+
+app.get('/secret', (req, res) => {
+    MongoClient.connect(URI, { useNewUrlParser : true }, (err, db) => {
+        if(err) {
+            console.log(err);
+        }
+        else {
+            const db = client.db(DB_NAME);
+            const collection = db.collection('names');
+            const entry = {
+                name : req.body.name.toLowerCase();
+            }
+        }
+    })
+})
