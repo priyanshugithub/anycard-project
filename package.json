@@ -16,5 +16,10 @@
   "bugs": {
     "url": "https://github.com/priyanshugithub/anycard-project/issues"
   },
-  "homepage": "https://github.com/priyanshugithub/anycard-project#readme"
+  "homepage": "https://github.com/priyanshugithub/anycard-project#readme",
+  "dependencies": {
+    "body-parser": "^1.19.0",
+    "express": "^4.16.4",
+    "mongodb": "^3.2.4"
+  }
 }
